@@ -10,8 +10,8 @@ const app = express();
 app.use(express.json({ extended: true }));
 app.use(
     cors({
-        credentials: true,
-        origin: ["https://mern-task-four-client.onrender.com"],
+        credentials: false,
+        origin: false,
     })
 );
 app.use("/api/auth", require("./routes/auth.routes"));
