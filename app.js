@@ -10,8 +10,8 @@ const app = express();
 app.use(express.json({ extended: true }));
 app.use(
     cors({
-        credentials: false,
-        origin: false,
+        credentials: true,
+        origin: "*",
     })
 );
 app.use("/api/auth", require("./routes/auth.routes"));
