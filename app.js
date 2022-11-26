@@ -8,7 +8,12 @@ const cors = require("cors");
 const app = express();
 
 app.use(express.json({ extended: true }));
-app.use(cors({ optionsSuccessStatus: 200 }));
+app.use(
+    cors({
+        credentials: true,
+        origin: ["https://mern-task-four-client.onrender.com"],
+    })
+);
 app.use("/api/auth", require("./routes/auth.routes"));
 app.use("/api/users", require("./routes/user.routes"));
 
