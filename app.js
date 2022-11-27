@@ -17,10 +17,10 @@ app.use(
 app.use("/api/auth", require("./routes/auth.routes"));
 app.use("/api/users", require("./routes/user.routes"));
 
-app.use("/", express.static(path.join(__dirname, "client", "build")));
+app.use("/", express.static(path.join(__dirname, "static")));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+app.get("/*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "index.html"));
 });
 
 // app.use(express.static(path.join(__dirname, "build")));
